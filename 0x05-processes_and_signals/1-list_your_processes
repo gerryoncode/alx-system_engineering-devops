@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Displays all currently learning processes
 
-ps -apu | less
+ps -auxf
