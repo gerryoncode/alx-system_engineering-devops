@@ -1,0 +1,2 @@
+#!/usr/bin/en ruby
+puts ARGV[0].scan(/^(?!\d+$)\d{10}/).join
