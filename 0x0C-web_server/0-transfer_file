@@ -4,7 +4,7 @@
 # Usage: ./transfer_file.sh <local_file> <remote_server> <remote_path>
 
 if [ $# -lt 4 ]; then
-    echo "Usage: ./transfer_file.sh <local_file> <remote_server> <remote_path> <remote_user>"
+    echo "Usage: ./transfer_file.sh <local_file> <remote_server> <remote_path> <remote_user>" >&2
     exit 1
 fi
 
@@ -14,3 +14,5 @@ USERNAME=$3
 PATH_TO_SSH_KEY=$4
 
 scp -o StrictHostKeyChecking=no -i "$PATH_TO_SSH_KEY" "$PATH_TO_FILE" "$USERNAME@$IP:~/"
+
+echo "File transfer complete."
