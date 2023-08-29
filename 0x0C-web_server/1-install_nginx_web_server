@@ -1,15 +1,11 @@
 #!/usr/bin/env bash
 
 # This script is used to install and start  a nginx web server
-
-sudo apt -y update
-sudo apt -y install nginx &
-
-install_pid=$!
-wait $install_pid
+apt -y update
+apt -y install nginx
 
 # Start nginx web server
 echo "Package installation complete"
 ufw allow 'Nginx HTTP'
-sudo echo "Hello, World!" > /var/www/html/index.html
-sudo service nginx start
+echo "Hello, World!" > /var/www/html/index.html
+service nginx start
