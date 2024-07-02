@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # Install and configures nginx server
 
 sudo apt-get update -y
