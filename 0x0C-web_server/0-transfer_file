@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+# Transfers a file from our client to a server
+
+NO_OF_ARGS=4
+PATH_TO_FILE="$1"
+IP="$2"
+USERNAME="$3"
+PATH_TO_SSH_KEY="$4"
+
+if [ $# -ne $NO_OF_ARGS ]; then
+    echo "Usage: $0 PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
+else
+    scp -i "$PATH_TO_SSH_KEY" -o StrictHostKeyChecking=no "$PATH_TO_FILE" "${USERNAME}@${IP}:~/"
+    echo "File transferred successfully"
+fi
